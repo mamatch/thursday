@@ -1,12 +1,6 @@
 from flask import Flask
+from thursday import create_app, db
+from flask_migrate import Migrate
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
-
-
-if __name__ == '__main__':
-    app.run()
+app = create_app("dev")
+migrate = Migrate(app, db)
