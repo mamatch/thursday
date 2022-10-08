@@ -1,8 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bootstrap import Bootstrap
 from config import config
 
 db = SQLAlchemy()
+boots = Bootstrap()
 
 
 def create_app(config_name: str):
@@ -17,6 +19,7 @@ def create_app(config_name: str):
 
     # initialisation of modules
     db.init_app(app)
+    boots.init_app(app)
 
     # insert routes, blueprints, etc....
     from .main import main as main_blueprint

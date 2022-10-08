@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <!--content-->
+    {% if nb == 0 %}
+        Pas de tweet
+    {% else %}
+        {% for tweet in tweets %}
+            {{ tweet.text }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
